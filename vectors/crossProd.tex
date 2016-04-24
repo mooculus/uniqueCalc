@@ -1,0 +1,212 @@
+
+
+\begin{question}
+  If $\det(\vec{a},\vec{b},\vec{c}) = 12$, what is
+  $\det(\vec{b},\vec{a},\vec{c})$?
+  \[
+  \det(\vec{b},\vec{a},\vec{c}) = \answer{-12}
+  \]
+  \begin{hint}
+    \[
+    \begin{vmatrix} 
+      b_1 & a_1 & c_1\\
+      b_2 & a_2 & c_2\\
+      b_3 & a_3 & c_3\\
+    \end{vmatrix}
+    =b_1a_2c_3+a_2c_3b_3+c_1b_2a_3-b_3a_2c_1-a_3c_3b_1-c_3b_2a_1
+    \]
+    
+    But this (make sure you check!) equal to
+    $-\det(\vec{a},\vec{b},\vec{c})$.  Thus the answer is $-12$.
+  \end{hint}
+\end{question}
+
+\begin{question}
+  \[
+  \det(\vec{a},\vec{a},\vec{b}) = \answer{0}
+  \]
+  \begin{hint}
+    If you write out the definition, you will see that all the terms cancel, and you get $0$
+  \end{hint}
+\end{question}
+	
+\begin{question}
+  Assume $\det(\vec{a},\vec{b},\vec{c}) = 3$.  Then 
+  \[
+  \det(5\vec{a},\vec{b},2\vec{c}) = \answer{30}
+  \]
+  \begin{hint}
+    Since each term has an entry from $\vec{a},\vec{b}$ and $\vec{c}$,
+    and each entry of each vector is getting multiplied by the same
+    constant, we get an extra factor of $10$ in each term.  Thus the
+    answer is $30$.
+  \end{hint}
+\end{question}
+
+\begin{question}
+  Assume $\det(\vec{a},\vec{b},\vec{c}) = 3$ and
+  $\det(\vec{a},\vec{b},\vec{d}) = 4$.
+  \[
+  \det(\vec{a},\vec{b},\vec{c}+\vec{d}) = \answer{7}
+  \]
+  
+  \begin{hint}
+    Writing out the definition, and distributing, you will see that
+    this is equal to the sum of the two original determinants.  So the
+    answer is $7$.
+  \end{hint}
+\end{question}
+
+The last few exercises strongly suggest the following theorem (which you have essentially already proven by doing the exercises above):
+	
+\begin{theorem}
+  The determinant enjoys the following properties, and is in fact the
+  \textbf{only} function enjoying such properties:
+  
+  \begin{itemize}
+  \item Alternating: Switching any pair of entries in the determinant
+    switches the sign.  For example $\det(\vec{a},\vec{b},\vec{c}) =
+    -\det(\vec{c},\vec{b},\vec{a})$.
+  \item Factor out scalars: Multiplying any entry by a constant scales
+    the determinant by that constant.  For example
+    $\det(k\vec{a},\vec{b},\vec{c}) = k\det(\vec{a},\vec{b},\vec{c})$
+  \item Respect addition: For example
+    $\det(\vec{a},\vec{b}+\vec{d},\vec{c}) =
+    \det(\vec{a},\vec{b},\vec{c}) +\det(\vec{a},\vec{d},\vec{c}) $
+  \item $\det(\vec{i},\vec{j},\vec{k}) = 1 $
+  \end{itemize}
+\end{theorem}
+
+\begin{observation}
+  By the alternating property, if the same vector appears more than
+  once as an argument in a determinant, then the determinant must be
+  zero.  For example consider $\det(\vec{a},\vec{a},\vec{b})$. By the
+  alternating property we must have
+  \[
+  \det(\vec{a},\vec{a},\vec{b}) = -\det(\vec{a},\vec{a},\vec{b})
+  \]
+  but this implies 
+  
+  \[
+  \det(\vec{a},\vec{a},\vec{b})=0
+  \]
+\end{observation}
+	
+We will not prove that the determinant is the only function with these
+properties, but that is an important point.  If you ever wondered
+where this crazy formula came from, this explains it.  If you want
+these $4$ nice looking properties, there is only one function which
+does it and it is this one.  You should be able to prove that
+yourself, using just the properties.  Just start with a general
+$\det(\vec{a},\vec{b},\vec{c}) $, and use the properties to reduce it
+to sums of determinants involving only $\vec{i},\vec{j}$ and
+$\vec{k}$.  The formula for the determinant will pop out.
+	
+It turns out that the determinant has the following geometric
+interpretation:
+\begin{theorem}
+  If $\vec{a},\vec{b},\vec{c} \in \R^3$, then they span a
+  parallelepiped. The volume of this parallelepiped is
+  $\left|\det(\vec{a},\vec{b},\vec{c})\right|$. If this parallelepiped
+  is not degenerate (has nonzero volume), then the sign of
+  $\det(\vec{a},\vec{b},\vec{c})$ tells you whether the trio of
+  vectors is \dfn{positively oriented} or \dfn{negatively oriented}
+  (this is the definition of positively and negatively oriented).
+\end{theorem} 
+	
+\begin{question}
+  Let $\vec{a} = \vector{1,1,1}$, $\vec{b} = \vector{1,0,1}$ and
+  $\vec{c} = \vector{1,0,0}$.  Is $(\vec{a},\vec{b},\vec{c})$
+  positively or negatively oriented?
+  \begin{multipleChoice}
+    \choice[correct]{positively}
+    \choice{negatively}
+  \end{multipleChoice}
+		
+  What is the volume of the parallelepiped spanned by these three vectors?
+  
+  \[
+  \textrm{Volume} = \answer{1}
+  \]
+  
+  \begin{hint}
+    \begin{align*}
+      \begin{vmatrix}
+	1 & 1 & 1\\
+	1 & 0 & 0\\
+	1 & 1 & 0
+      \end{vmatrix} &=
+      1(0)(0)+1(0)(1)+1(1)(1)-1(0)(1)-1(1)(1)-0(1)(1)\\
+      &=1
+    \end{align*}
+    
+    Thus this trio is positively oriented, and its volume is $1$.
+  \end{hint}
+\end{question}
+
+\begin{question}
+  Do the vectors $\vector{1,2,2}$, $\vector{3,4,1}$ and $\vector{5,8,5}$ all lie in the same plane?
+  
+  \begin{multipleChoice}
+    \choice{No}
+    \choice[correct]{Yes}
+  \end{multipleChoice}
+  
+  \begin{hint}
+    They will lie in the same plane if and only if the parallelepiped they span
+    is degenerate, aka its volume is $0$.
+  \end{hint}
+  
+  \begin{hint}
+    So we just need to see whether the determinant of these three
+    vectors is zero or not.
+  \end{hint}
+  
+  \begin{hint}
+    \begin{align*}
+      \begin{vmatrix}
+	1&3&5\\
+	2&4&8\\
+	2&1&5
+      \end{vmatrix} &= 1(4)(5)+3(8)(2)+5(2)(1)-2(4)(5)-1(8)(1)-5(2)(3)\\
+      &=20+48+10-40-8-30\\
+      &=78-78\\
+      &=0
+    \end{align*}
+    
+    Thus the vectors must all lie in the same plane.  In fact, we can
+    see that $2\vector{1,2,2}+\vector{3,4,1}=\vector{5,8,5}$, which
+    confirms this fact.
+  \end{hint}
+  
+\end{question}
+We will not explicitly prove this theorem here.  However, you
+should be able to convince yourself that the oriented volume
+function $\textrm{Vol}(\vec{a},\vec{b},\vec{c})$ satisfies all
+$4$ conditions of the determinant above.  Since there is only
+one function satisfying these properties, the volume function
+must be given by the determinant.
+Here is a nice geometric interpretation of orientation.
+
+\begin{theorem}
+  Consider the trio of vectors $(\vec{a},\vec{b},\vec{c})$.  Assume
+  that they form a nondegenerate parallelepiped.  Then the vectors
+  $\vec{a}$ and $\vec{b}$ define a plane.  There are two sides to this
+  plane.  If you take your right hand, and curl your fingers from
+  $\vec{a}$ to $\vec{b}$, your thumb will be pointing to one side of
+  the plane.  If $\vec{c}$ is on this side, then the trio is
+  positively oriented.  Otherwise it is negatively oriented.
+  \begin{center}
+    BADBAD
+    %\includegraphics[width=3 in]{RHR.jpg}
+    All vectors on the same side of the plane that the thumb is pointing are positively oriented with respect to $(A,B)$
+  \end{center}
+\end{theorem}
+
+
+
+
+
+
+
+

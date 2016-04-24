@@ -1,0 +1,117 @@
+The simplest kind of vector valued function $\R \to \R^3$ is a
+\textit{linear} function.
+
+\begin{definition}
+  A \dfn{linear} function from $\R \to \R^3$ is a function of the form
+  \[
+  \boldsymbol{\l}(t) = t\vec{v}
+  \] 
+  where $\vec{v} \in \R^3$ is a given vector.
+\end{definition} 
+ 
+\begin{question}
+  If $f$ is a linear function, and $f(2) = \vector{2,4,6}$, what is
+  $f(3)$?
+  \[	
+  f(3) = \vector{\answer{3},\answer{6},\answer{9}}
+  \]
+\end{question}
+ 
+\begin{question}
+  Assume $f:\R \to \R^3$ is a linear function.  Then 
+  \[
+  f(0) = \vector{\answer{0},\answer{0},\answer{0}}
+  \]
+\end{question}
+
+Linear functions are called ``linear'' because they parameterize lines
+through the origin.
+
+ %BADBAD picture
+ 
+ \begin{question}
+   Compare and contrast the linear function $\vec{f}(t) = (1,2,3)$ and $\vec{g}(t)=(2,4,6)$	
+   \begin{multipleChoice}
+     \choice{They parameterize different lines}
+     \choice{They parameterize the same line, but $\vec{f}(t)$ moves ``twice as fast'' as $\vec{g}(t)$ }
+     \choice[correct]{They parameterize the same line, but $\vec{g}(t)$ moves ``twice as fast'' as $\vec{f}(t)$ }
+     \choice{These are the same function!}
+	\end{multipleChoice}
+ \end{question}
+ 
+ What if we want to parameterize the lines going through a different
+ point $P$, instead of lines going through the origin?
+ 
+ All we have to do is translate!
+
+ \begin{definition}
+   An \dfn{affine} function $f:\R \to \R^3$ is a function of the form
+   \[
+   f(t) = \vec{P}+t\vec{v}
+   \]
+   where $\vec{P}$ and $\vec{v}$ are vectors in $\R^3$
+ \end{definition}
+ 
+ An affine function parameterizes a line passing through the point
+ $\vec{P}$, pointing in the direction $\vec{v}$
+ 
+\begin{question}
+  If $f(t) = \vector{x(t),y(t),z(t)}$ is an affine function and passes
+  through the points $f(0) = \vector{1,2,3}$ and $f(1) =
+  \vector{2,2,2}$, then
+  \begin{align*}
+    x(t) &= \answer{1+t}\\
+    y(t) &= \answer{2}\\
+    z(t) &= \answer{3-t}
+  \end{align*}
+  \begin{hint}
+    Let $f(t) = \vec{P}+t\vec{v}$.  Then $f(0) = \vec{P} = \vector{1,2,3}$
+  \end{hint}
+  \begin{hint}
+    \begin{align*}
+      f(1) &= \vector{2,2,2}\\
+      \vector{1,2,3}+1\vec{v} &= \vector{2,2,2}\\
+      \vec{v} = \vector{1,0,-1}
+    \end{align*}
+  \end{hint}
+  \begin{hint}
+    Thus $f(t) = \vector{1,2,3}+t\vector{1,0,-1} = \vector{1+t,2,3-t}$
+  \end{hint}
+\end{question}
+
+\begin{explanation}
+  We can use affine functions to parameterize any line in space, but
+  as we have already seen, sometimes you can find more than one affine
+  function which parameterizes a given line (some may ``move faster''
+  than others).
+  
+  Often, for a given line, we will already know that the line passes
+  through a point $P$, and points in a direction $\vec{v}$.  Then
+  finding an affine function parameterizing the line is easy: we can
+  just take $f(t) = \vec{P}+t\vec{v}$.
+  
+  If we know that a line passes through two points $P$ and $Q$, then
+  we know that it points in the direction $\vec{v} = \vec{Q} -
+  \vec{P}$, and passes through $P$.  So we can parameterize it as
+  $f(t) = \vec{P}+t(\vec{Q} - \vec{P})$.
+\end{explanation}
+
+\begin{question}
+  Using the idea above, find an affine function parameterizing the
+  line passing through $\vec{P} = \vector{0,2,4}$ and $\vec{Q} =
+  \vector{1,1,1}$.
+  \[
+  f(t) = \vector{\answer{t},\answer{2-t},\answer{4-3t}}
+  \]
+  \begin{hint}
+    The line passes through $\vec{P}$ and points in the direction
+    $\vec{Q} - \vec{P} = \vector{1,1,1} - \vector{0,2,4} =
+    \vector{1,-1,-3}$.
+  \end{hint}
+  \begin{hint}
+    Thus the line is parameterized by 
+    \[
+    f(t) = \vector{0,2,4}+t\vector{1,-1,-3}
+    \]
+  \end{hint}
+\end{question}
